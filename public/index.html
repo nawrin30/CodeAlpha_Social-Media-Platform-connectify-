@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify - Home Feed</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Connectify</a>
+      <nav class="nav-links">
+        <a href="/" class="active">Home</a>
+        <a href="/search.html">Search</a>
+        <a href="#" id="my-profile-link">Profile</a>
+        <button id="logout-btn" class="btn btn-secondary btn-sm">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="create-post-card">
+      <h3>Create a Post</h3>
+      <form id="create-post-form">
+        <textarea id="post-content" placeholder="What's on your mind?" required rows="3"></textarea>
+        <div class="post-form-footer">
+          <input type="file" id="post-image" accept="image/*">
+          <button type="submit" class="btn btn-primary">Post</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="feed-container">
+      <!-- Posts feed items injected dynamically -->
+    </section>
+  </main>
+
+  <script src="/js/home.js"></script>
+</body>
+</html>

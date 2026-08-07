@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify - Register</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-body">
+  <div class="auth-card">
+    <h1 class="logo">Connectify</h1>
+    <p class="subtitle">Join your university network today!</p>
+    
+    <div id="error-msg" class="error-msg"></div>
+
+    <form id="register-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required>
+      </div>
+      <button type="submit" class="btn btn-primary full-width">Register</button>
+    </form>
+    
+    <p class="auth-footer">Already have an account? <a href="/login.html">Login</a></p>
+  </div>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>

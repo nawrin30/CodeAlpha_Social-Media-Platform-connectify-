@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connectify - Profile</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Connectify</a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/search.html">Search</a>
+        <a href="#" id="my-profile-link" class="active">Profile</a>
+        <button id="logout-btn" class="btn btn-secondary btn-sm">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="profile-card">
+      <div class="profile-header">
+        <img id="profile-avatar" src="" alt="Profile Picture" class="profile-avatar">
+        <div class="profile-details">
+          <h2 id="profile-username">Loading...</h2>
+          <p id="profile-bio" class="bio-text"></p>
+          <div class="profile-stats">
+            <div><strong id="stat-posts">0</strong> Posts</div>
+            <div><strong id="stat-followers">0</strong> Followers</div>
+            <div><strong id="stat-following">0</strong> Following</div>
+          </div>
+          <div id="profile-actions" class="profile-actions">
+            <!-- Follow or Edit Profile controls injected dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edit Profile Modal / Form Container -->
+    <section id="edit-profile-card" class="create-post-card hidden">
+      <h3>Edit Profile</h3>
+      <form id="edit-profile-form">
+        <div class="form-group">
+          <label for="edit-bio">Bio</label>
+          <textarea id="edit-bio" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="edit-picture">Profile Picture</label>
+          <input type="file" id="edit-picture" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="button" id="cancel-edit-btn" class="btn btn-secondary">Cancel</button>
+      </form>
+    </section>
+
+    <h3 class="section-title">User Posts</h3>
+    <section id="user-posts-container">
+      <!-- User's posts injected dynamically -->
+    </section>
+  </main>
+
+  <script src="/js/profile.js"></script>
+</body>
+</html>
