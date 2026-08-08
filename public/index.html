@@ -3,180 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connectify - Home Feed</title>
+  <title>Connectify - Live Demo</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #f0f2f5;
-      color: #1c1e21;
-    }
-    .navbar {
-      background-color: #ffffff;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo {
-      color: #1877f2;
-      font-size: 24px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #65676b;
-      font-weight: 600;
-    }
-    .nav-links a.active, .nav-links a:hover {
-      color: #1877f2;
-    }
-    .btn {
-      padding: 8px 16px;
-      border-radius: 6px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background-color: #1877f2;
-      color: white;
-    }
-    .btn-primary:hover {
-      background-color: #166fe5;
-    }
-    .btn-secondary {
-      background-color: #e4e6eb;
-      color: #050505;
-    }
-    .container {
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 0 15px;
-    }
-    .create-post-card, .post-card {
-      background: #ffffff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      margin-bottom: 20px;
-    }
-    .create-post-card h3 {
-      margin-bottom: 15px;
-      color: #333;
-    }
-    textarea {
-      width: 100%;
-      border: 1px solid #dddfe2;
-      border-radius: 6px;
-      padding: 12px;
-      font-size: 15px;
-      resize: none;
-      outline: none;
-      background-color: #f8f9fa;
-    }
-    textarea:focus {
-      border-color: #1877f2;
-      background-color: #fff;
-    }
-    .post-form-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
-    }
-    .post-author {
-      font-weight: bold;
-      color: #050505;
-    }
-    .post-time {
-      font-size: 12px;
-      color: #8a8d91;
-      margin-bottom: 10px;
-    }
-    .post-content {
-      line-height: 1.4;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+    body { background-color: #f0f2f5; }
+    .navbar { background: #fff; padding: 15px 50px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { color: #1877f2; font-size: 24px; font-weight: bold; text-decoration: none; }
+    .container { max-width: 600px; margin: 30px auto; padding: 20px; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+    textarea { width: 100%; height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; resize: none; margin-bottom: 10px; }
+    .btn { background: #1877f2; color: #fff; padding: 8px 20px; border: none; border-radius: 6px; cursor: pointer; float: right; }
+    .post-author { font-weight: bold; }
+    .post-time { font-size: 12px; color: #888; margin-bottom: 10px; }
   </style>
 </head>
 <body>
+
   <header class="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">Connectify</a>
-      <nav class="nav-links">
-        <a href="#" class="active">Home</a>
-        <a href="#">Search</a>
-        <a href="#" id="my-profile-link">Profile</a>
-        <button id="logout-btn" class="btn btn-secondary">Logout</button>
-      </nav>
-    </div>
+    <a href="#" class="nav-logo">Connectify</a>
   </header>
 
   <main class="container">
-    <section class="create-post-card">
+    <div class="card">
       <h3>Create a Post</h3>
-      <form id="create-post-form">
-        <textarea id="post-content" placeholder="What's on your mind?" required rows="3"></textarea>
-        <div class="post-form-footer">
-          <input type="file" id="post-image" accept="image/*">
-          <button type="submit" class="btn btn-primary">Post</button>
-        </div>
-      </form>
-    </section>
+      <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+      <button id="post-btn" class="btn">Post</button>
+      <div style="clear: both;"></div>
+    </div>
 
-    <section id="feed-container">
-      <!-- Demo Post for Preview -->
-      <div class="post-card">
+    <div id="feed-container">
+      <div class="card">
         <div class="post-author">Nawrin</div>
-        <div class="post-time">2 hours ago</div>
-        <p class="post-content">Welcome to Connectify! This is a demo preview of the feed.</p>
+        <div class="post-time">Just now</div>
+        <p>Welcome to Connectify Demo!</p>
       </div>
-    </section>
+    </div>
   </main>
 
   <script>
-    // Form Submit Handling for Frontend Demo
-    document.getElementById('create-post-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const contentInput = document.getElementById('post-content');
-      const text = contentInput.value.trim();
-      
-      if (!text) return;
+    document.getElementById('post-btn').addEventListener('click', function() {
+      const content = document.getElementById('post-content').value.trim();
+      if (!content) return alert("Write something!");
 
-      const feedContainer = document.getElementById('feed-container');
+      const feed = document.getElementById('feed-container');
       const newPost = document.createElement('div');
-      newPost.className = 'post-card';
+      newPost.className = 'card';
       newPost.innerHTML = `
         <div class="post-author">Nawrin</div>
         <div class="post-time">Just now</div>
-        <p class="post-content">${text}</p>
+        <p>${content}</p>
       `;
-
-      feedContainer.prepend(newPost);
-      contentInput.value = '';
+      feed.prepend(newPost);
+      document.getElementById('post-content').value = '';
     });
   </script>
 </body>
