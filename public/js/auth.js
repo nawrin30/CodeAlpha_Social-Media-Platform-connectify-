@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     errorMsg.style.display = 'block';
   }
 
-  // Handle Registration
+ 
   if (registerForm) {
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle Login
+  
   if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();

@@ -6,7 +6,7 @@ const postController = require('../controllers/postController');
 const commentController = require('../controllers/commentController');
 const { isAuthenticated } = require('../middleware/authMiddleware');
 
-// Storage configuration for post images
+
 const postStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, '..', 'uploads', 'posts'));
@@ -26,7 +26,7 @@ router.delete('/:id', isAuthenticated, postController.deletePost);
 router.post('/:id/like', isAuthenticated, postController.likePost);
 router.delete('/:id/like', isAuthenticated, postController.unlikePost);
 
-// Post Comments Routing
+
 router.get('/:id/comments', isAuthenticated, commentController.getComments);
 router.post('/:id/comments', isAuthenticated, commentController.createComment);
 

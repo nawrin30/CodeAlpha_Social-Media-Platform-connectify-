@@ -1,6 +1,6 @@
 const db = require('../config/database');
 
-// Get all comments for a specific post
+
 exports.getComments = (req, res) => {
   const postId = req.params.id;
 
@@ -18,7 +18,7 @@ exports.getComments = (req, res) => {
   });
 };
 
-// Create a comment
+
 exports.createComment = (req, res) => {
   const userId = req.session.userId;
   const postId = req.params.id;
@@ -35,12 +35,12 @@ exports.createComment = (req, res) => {
   });
 };
 
-// Delete comment
+
 exports.deleteComment = (req, res) => {
   const userId = req.session.userId;
   const commentId = req.params.id;
 
-  // Protect comment deletion so only owner can delete
+  
   db.get('SELECT user_id FROM comments WHERE id = ?', [commentId], (err, comment) => {
     if (err) return res.status(500).json({ error: 'Database error.' });
     if (!comment) return res.status(404).json({ error: 'Comment not found.' });

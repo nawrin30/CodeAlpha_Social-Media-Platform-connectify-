@@ -106,7 +106,7 @@ exports.likePost = (req, res) => {
   });
 };
 
-// Unlike a post
+
 exports.unlikePost = (req, res) => {
   const userId = req.session.userId;
   const postId = req.params.id;

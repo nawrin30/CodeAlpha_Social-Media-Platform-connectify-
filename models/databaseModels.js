@@ -1,9 +1,9 @@
 const db = require('../config/database');
 
-// Initialize database schema
+
 function initDb() {
   db.serialize(() => {
-    // 1. Users Table
+   
     db.run(`
       CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,7 +16,7 @@ function initDb() {
       )
     `);
 
-    // 2. Posts Table
+  
     db.run(`
       CREATE TABLE IF NOT EXISTS posts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,7 +29,7 @@ function initDb() {
       )
     `);
 
-    // 3. Comments Table
+   
     db.run(`
       CREATE TABLE IF NOT EXISTS comments (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,7 +42,7 @@ function initDb() {
       )
     `);
 
-    // 4. Likes Table
+   
     db.run(`
       CREATE TABLE IF NOT EXISTS likes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -55,7 +55,7 @@ function initDb() {
       )
     `);
 
-    // 5. Follows Table
+    
     db.run(`
       CREATE TABLE IF NOT EXISTS follows (
         id INTEGER PRIMARY KEY AUTOINCREMENT,

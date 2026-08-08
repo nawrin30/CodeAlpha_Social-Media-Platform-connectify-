@@ -3,6 +3,7 @@
 Connectify is a simple, lightweight, full-stack mini social media web application developed using **Node.js**, **Express.js**, **SQLite**, and standard **Vanilla JavaScript**, **HTML**, and **CSS**.
 
 ---
+## live demo:  https://nawrin30.github.io/CodeAlpha_Social-Media-Platform-connectify-/
 
 ## 🛠 Tech Stack
 

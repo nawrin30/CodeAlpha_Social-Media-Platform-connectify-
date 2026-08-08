@@ -1,6 +1,6 @@
 const db = require('../config/database');
 
-// Get user profile details by username
+
 exports.getUserProfile = (req, res) => {
   const targetUsername = req.params.username;
   const currentUserId = req.session.userId;
@@ -14,19 +14,19 @@ exports.getUserProfile = (req, res) => {
     if (err) return res.status(500).json({ error: 'Database error.' });
     if (!targetUser) return res.status(404).json({ error: 'User not found.' });
 
-    // Count posts
+   
     db.get('SELECT COUNT(*) as postCount FROM posts WHERE user_id = ?', [targetUser.id], (err, pRes) => {
       if (err) return res.status(500).json({ error: 'Database error.' });
 
-      // Count followers
+     
       db.get('SELECT COUNT(*) as followerCount FROM follows WHERE following_id = ?', [targetUser.id], (err, fRes) => {
         if (err) return res.status(500).json({ error: 'Database error.' });
 
-        // Count following
+       
         db.get('SELECT COUNT(*) as followingCount FROM follows WHERE follower_id = ?', [targetUser.id], (err, fgRes) => {
           if (err) return res.status(500).json({ error: 'Database error.' });
 
-          // Check if logged-in user is following target user
+          
           db.get('SELECT id FROM follows WHERE follower_id = ? AND following_id = ?', [currentUserId, targetUser.id], (err, isFollow) => {
             if (err) return res.status(500).json({ error: 'Database error.' });
 
@@ -47,7 +47,7 @@ exports.getUserProfile = (req, res) => {
   });
 };
 
-// Update profile picture and bio
+
 exports.updateProfile = (req, res) => {
   const userId = req.session.userId;
   const { bio } = req.body;
@@ -68,7 +68,7 @@ exports.updateProfile = (req, res) => {
   }
 };
 
-// Search users by username query
+
 exports.searchUsers = (req, res) => {
   const query = req.query.q || '';
   const sql = `SELECT id, username, profile_picture, bio FROM users WHERE username LIKE ? LIMIT 20`;
@@ -79,7 +79,7 @@ exports.searchUsers = (req, res) => {
   });
 };
 
-// Follow user
+
 exports.followUser = (req, res) => {
   const followerId = req.session.userId;
   const followingId = parseInt(req.params.id);
@@ -100,7 +100,7 @@ exports.followUser = (req, res) => {
   });
 };
 
-// Unfollow user
+
 exports.unfollowUser = (req, res) => {
   const followerId = req.session.userId;
   const followingId = parseInt(req.params.id);

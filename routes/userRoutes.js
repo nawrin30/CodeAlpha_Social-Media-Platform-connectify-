@@ -5,7 +5,7 @@ const path = require('path');
 const userController = require('../controllers/userController');
 const { isAuthenticated } = require('../middleware/authMiddleware');
 
-// Storage configuration for profiles
+
 const profileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, '..', 'uploads', 'profiles'));

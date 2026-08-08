@@ -34,7 +34,7 @@ function setupLogout() {
 function setupSearch() {
   const input = document.getElementById('search-input');
   
-  // Search dynamically on typing
+  
   input.addEventListener('input', async () => {
     const query = input.value.trim();
     const res = await fetch(`/api/users/search?q=${encodeURIComponent(query)}`);

@@ -1,4 +1,4 @@
-/* Base Layout & Color Palette */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* Authentication Page Styles */
+
 .auth-body {
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@ body {
   border-color: #1877f2;
 }
 
-/* Buttons */
+
 .btn {
   padding: 0.6rem 1.2rem;
   border: none;
@@ -137,7 +137,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Navbar */
+
 .navbar {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
@@ -178,7 +178,7 @@ body {
   color: #1877f2;
 }
 
-/* Main Container */
+
 .container {
   max-width: 700px;
   margin: 1.5rem auto;
@@ -209,7 +209,7 @@ body {
   margin-top: 0.8rem;
 }
 
-/* Post Card Styles */
+
 .post-card {
   background: #ffffff;
   border-radius: 8px;
@@ -284,7 +284,7 @@ body {
   color: #1877f2;
 }
 
-/* Comment Section */
+
 .comments-section {
   border-top: 1px solid #e4e6eb;
   margin-top: 0.8rem;
@@ -326,7 +326,7 @@ body {
   border-radius: 20px;
 }
 
-/* Profile Styles */
+
 .profile-header {
   display: flex;
   gap: 1.5rem;
@@ -361,7 +361,7 @@ body {
   color: #606770;
 }
 
-/* Search Results */
+
 .search-results {
   display: flex;
   flex-direction: column;
